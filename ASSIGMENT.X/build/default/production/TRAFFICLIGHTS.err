@@ -1,0 +1,6 @@
+Warning[205] C:\USERS\TEACHER\MPLABXPROJECTS\ASSIGMENT.X\TRAFFICLIGHTS.ASM 10 : Found directive in column 1. (org)
+Message[302] C:\USERS\TEACHER\MPLABXPROJECTS\ASSIGMENT.X\TRAFFICLIGHTS.ASM 20 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[305] C:\USERS\TEACHER\MPLABXPROJECTS\ASSIGMENT.X\TRAFFICLIGHTS.ASM 29 : Using default destination of 1 (file).
+Message[305] C:\USERS\TEACHER\MPLABXPROJECTS\ASSIGMENT.X\TRAFFICLIGHTS.ASM 38 : Using default destination of 1 (file).
+Message[305] C:\USERS\TEACHER\MPLABXPROJECTS\ASSIGMENT.X\TRAFFICLIGHTS.ASM 47 : Using default destination of 1 (file).
+Warning[205] C:\USERS\TEACHER\MPLABXPROJECTS\ASSIGMENT.X\TRAFFICLIGHTS.ASM 51 : Found directive in column 1. (END)

@@ -1,0 +1,92 @@
+MPASM 5.82                 TRAFFICLIGHTS.ASM   8-1-2021  14:20:58         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+  00000003            00001 STATUS equ 03h
+  00000005            00002 RPZ equ 05
+  00000006            00003 RPO equ 06
+                      00004 
+  00000006            00005 PORTB equ 06h
+  00000086            00006 TRISB equ 86h
+                      00007 
+  00000020            00008 COUNTER equ 20h
+                      00009 
+Warning[205]: Found directive in column 1. (org)
+                      00010 org 00h
+                      00011 
+0000   0103           00012     clrw
+0001   1283           00013     BCF STATUS, RPZ
+0002   1303           00014     BCF STATUS, RPO
+                      00015  
+0003   0186           00016     CLRF PORTB
+                      00017 
+0004   1683           00018     BSF STATUS, RPZ
+0005   3000           00019     MOVLW 0x00 
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0006   0086           00020     MOVWF TRISB
+                      00021 
+0007   1283           00022     BCF STATUS, RPZ;
+                      00023 
+0008   3001           00024 START   MOVLW b'00000001'
+0009   0086           00025     MOVWF PORTB
+000A   30FF           00026     MOVLW 0xff
+000B   00A0           00027     MOVWF COUNTER
+                      00028 
+Message[305]: Using default destination of 1 (file).
+000C   0BA0           00029 LOOP1 DECFSZ COUNTER
+000D   2???           00030     GOTO LOOP1
+                      00031 
+000E   0186           00032     CLRF PORTB
+000F   3002           00033     MOVLW b'00000010'
+0010   0086           00034     MOVWF PORTB
+                      00035       
+0011   30FF           00036     MOVLW 0xff
+0012   00A0           00037     MOVWF COUNTER
+Message[305]: Using default destination of 1 (file).
+0013   0BA0           00038 LOOP2 DECFSZ COUNTER
+0014   2???           00039     GOTO LOOP2
+                      00040 
+0015   0186           00041     CLRF PORTB
+0016   3004           00042     MOVLW b'00000100'
+0017   0086           00043     MOVWF PORTB
+                      00044     
+0018   30FF           00045     MOVLW 0xff
+0019   00A0           00046     MOVWF COUNTER
+Message[305]: Using default destination of 1 (file).
+001A   0BA0           00047 LOOP3 DECFSZ COUNTER
+001B   2???           00048     GOTO LOOP3
+MPASM 5.82                 TRAFFICLIGHTS.ASM   8-1-2021  14:20:58         PAGE  2
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00049       
+001C   2???           00050     GOTO START
+Warning[205]: Found directive in column 1. (END)
+                      00051 END
+MPASM 5.82                 TRAFFICLIGHTS.ASM   8-1-2021  14:20:58         PAGE  3
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+COUNTER                           00000020
+LOOP1                             0000000C
+LOOP2                             00000013
+LOOP3                             0000001A
+PORTB                             00000006
+RPO                               00000006
+RPZ                               00000005
+START                             00000008
+STATUS                            00000003
+TRISB                             00000086
+__16F877A                         00000001
+
+Errors   :     0
+Warnings :     2 reported,     0 suppressed
+Messages :     4 reported,     0 suppressed
+
+
